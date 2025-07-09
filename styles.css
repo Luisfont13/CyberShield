@@ -143,6 +143,114 @@ body {
 .overlay.active {
     display: block;
 }
+/* Secciones principales y responsividad */
+.welcome-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.features-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.feature {
+    background: #23283a;
+    color: #fff;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    min-width: 220px;
+    max-width: 320px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    flex: 1 1 250px;
+}
+.cta-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.cta-btn {
+    background: linear-gradient(90deg, #00bcd4, #181c24);
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: background 0.2s;
+}
+.cta-btn:hover {
+    background: linear-gradient(90deg, #181c24, #00bcd4);
+}
+.auth-section {
+    background: #f4f6fa;
+    border-radius: 14px;
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+    max-width: 400px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    text-align: center;
+}
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.auth-form input {
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #bbb;
+    font-size: 1rem;
+}
+.auth-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+.auth-actions button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    border: none;
+    background: #00bcd4;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.auth-actions .register-btn {
+    background: #181c24;
+}
+.auth-actions button:hover {
+    background: #0097a7;
+}
+.info-section {
+    text-align: center;
+    margin: 2rem 0;
+}
+.prototype-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+    margin-top: 1rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+.links-section {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: #222;
+}
+.links-section a {
+    color: #00bcd4;
+    text-decoration: none;
+    margin: 0 0.3rem;
+    transition: color 0.2s;
+}
+.links-section a:hover {
+    color: #181c24;
+}
 @media (max-width: 800px) {
     .main-header, .hero-img-container {
         height: 4cm;
@@ -156,5 +264,15 @@ body {
     }
     .logo {
         height: 36px;
+    }
+    .features-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .main-content {
+        padding: 0.5rem;
+    }
+    .auth-section {
+        padding: 1rem 0.5rem;
     }
 }
