@@ -1,0 +1,16 @@
+{
+  "name": "cybershield",
+  "version": "1.0.0",
+  "description": "Proyecto web básico con TypeScript y dependencias esenciales.",
+  "main": "publi/app.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "live-server publi"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "live-server": "^1.2.2"
+  }
+}
