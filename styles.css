@@ -1,10 +1,10 @@
-/* Fondo gradiente oscuro-claro */
+/* Fondo completamente oscuro y mejoras visuales */
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #181c24 50%, #f4f6fa 50%);
+    background: #10131a;
     min-height: 100vh;
-    color: #222;
+    color: #f4f6fa;
 }
 
 .main-header {
@@ -16,9 +16,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: transparent;
+    background: rgba(16,19,26,0.95);
     z-index: 10;
     padding: 0 2rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    border-bottom: 1.5px solid #222a36;
 }
 .header-left {
     display: flex;
@@ -36,7 +38,7 @@ body {
 .menu-icon {
     width: 30px;
     height: 3px;
-    background: #fff;
+    background: #00bcd4;
     display: block;
     position: relative;
 }
@@ -45,15 +47,19 @@ body {
     position: absolute;
     width: 30px;
     height: 3px;
-    background: #fff;
+    background: #00bcd4;
     left: 0;
     transition: 0.3s;
 }
 .menu-icon::before { top: -10px; }
 .menu-icon::after { top: 10px; }
 .logo {
-    height: 48px;
+    height: 56px;
     margin-left: 0.5rem;
+    filter: drop-shadow(0 2px 8px #00bcd4cc);
+    background: rgba(255,255,255,0.10);
+    border-radius: 50%;
+    padding: 6px;
 }
 .nav-menu {
     position: fixed;
@@ -61,7 +67,7 @@ body {
     left: -220px;
     width: 200px;
     height: 100vh;
-    background: rgba(24,28,36,0.98);
+    background: #181c24;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -101,14 +107,16 @@ body {
     margin-left: 0.5rem;
     padding: 0.4rem 1rem;
     border-radius: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #00bcd4;
     font-size: 1rem;
     outline: none;
+    background: #23283a;
+    color: #fff;
     transition: box-shadow 0.2s;
 }
 .search-input.active {
     display: inline-block;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,188,212,0.18);
 }
 .hero-img-container {
     width: 100vw;
@@ -116,12 +124,16 @@ body {
     overflow: hidden;
     position: relative;
     margin-top: 0;
+    box-shadow: 0 8px 32px 0 rgba(0,188,212,0.10);
 }
 .hero-img {
     width: 100vw;
     height: 100%;
     object-fit: cover;
     display: block;
+    filter: brightness(0.7) saturate(1.2) contrast(1.1);
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
 }
 .main-content {
     margin-top: 6.5cm;
@@ -129,9 +141,10 @@ body {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    background: rgba(255,255,255,0.85);
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    background: rgba(24,28,36,0.92);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0,188,212,0.10);
+    border: 1px solid #23283a;
 }
 .overlay {
     display: none;
@@ -143,7 +156,6 @@ body {
 .overlay.active {
     display: block;
 }
-/* Secciones principales y responsividad */
 .welcome-section {
     text-align: center;
     margin-bottom: 2rem;
@@ -158,40 +170,51 @@ body {
 .feature {
     background: #23283a;
     color: #fff;
-    border-radius: 12px;
-    padding: 1.5rem 2rem;
+    border-radius: 18px;
+    padding: 2rem 2.5rem;
     min-width: 220px;
-    max-width: 320px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    max-width: 340px;
+    box-shadow: 0 4px 24px rgba(0,188,212,0.10);
     flex: 1 1 250px;
+    border: 1.5px solid #00bcd4;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.feature:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0,188,212,0.18);
 }
 .cta-section {
     text-align: center;
     margin-bottom: 2rem;
 }
 .cta-btn {
-    background: linear-gradient(90deg, #00bcd4, #181c24);
+    background: linear-gradient(90deg, #00bcd4, #181c24 80%);
     color: #fff;
     border: none;
-    border-radius: 24px;
-    padding: 1rem 2.5rem;
-    font-size: 1.2rem;
+    border-radius: 32px;
+    padding: 1.2rem 3rem;
+    font-size: 1.3rem;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    transition: background 0.2s;
+    box-shadow: 0 4px 16px rgba(0,188,212,0.18);
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    transition: background 0.2s, transform 0.2s;
 }
 .cta-btn:hover {
-    background: linear-gradient(90deg, #181c24, #00bcd4);
+    background: linear-gradient(90deg, #181c24, #00bcd4 80%);
+    transform: scale(1.04);
 }
 .auth-section {
-    background: #f4f6fa;
-    border-radius: 14px;
-    padding: 2rem 1rem;
+    background: #23283a;
+    border-radius: 18px;
+    padding: 2.5rem 1.5rem;
     margin: 2rem auto;
-    max-width: 400px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    max-width: 420px;
+    box-shadow: 0 4px 24px rgba(0,188,212,0.10);
     text-align: center;
+    color: #fff;
+    border: 1.5px solid #00bcd4;
 }
 .auth-form {
     display: flex;
@@ -199,10 +222,18 @@ body {
     gap: 1rem;
 }
 .auth-form input {
-    padding: 0.7rem 1rem;
-    border-radius: 8px;
-    border: 1px solid #bbb;
-    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    border: 1.5px solid #00bcd4;
+    font-size: 1.1rem;
+    background: #181c24;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    transition: border 0.2s;
+}
+.auth-form input:focus {
+    border: 1.5px solid #00bcd4;
+    outline: none;
 }
 .auth-actions {
     display: flex;
@@ -210,20 +241,22 @@ body {
     justify-content: center;
 }
 .auth-actions button {
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
     border: none;
-    background: #00bcd4;
+    background: linear-gradient(90deg, #00bcd4, #181c24 80%);
     color: #fff;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
+    font-size: 1rem;
 }
 .auth-actions .register-btn {
-    background: #181c24;
+    background: linear-gradient(90deg, #181c24, #00bcd4 80%);
 }
 .auth-actions button:hover {
-    background: #0097a7;
+    background: linear-gradient(90deg, #00bcd4 60%, #181c24 100%);
+    transform: scale(1.04);
 }
 .info-section {
     text-align: center;
@@ -231,25 +264,33 @@ body {
 }
 .prototype-img {
     width: 100%;
-    max-width: 400px;
-    border-radius: 16px;
+    max-width: 420px;
+    border-radius: 24px;
     margin-top: 1rem;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    box-shadow: 0 8px 32px 0 rgba(0,188,212,0.10);
+    border: 2px solid #00bcd4;
+    background: rgba(255,255,255,0.10);
 }
 .links-section {
     text-align: center;
     margin-top: 2rem;
-    font-size: 1rem;
-    color: #222;
+    font-size: 1.1rem;
+    color: #fff;
+    background: #181c24;
+    border-radius: 12px;
+    padding: 0.7rem 0;
+    box-shadow: 0 2px 8px rgba(0,188,212,0.08);
 }
 .links-section a {
     color: #00bcd4;
     text-decoration: none;
-    margin: 0 0.3rem;
+    margin: 0 0.4rem;
+    font-weight: 500;
     transition: color 0.2s;
 }
 .links-section a:hover {
-    color: #181c24;
+    color: #fff;
+    text-decoration: underline;
 }
 @media (max-width: 800px) {
     .main-header, .hero-img-container {
@@ -260,19 +301,17 @@ body {
     }
     .main-content {
         margin-top: 4.5cm;
-        padding: 1rem;
+        padding: 0.5rem;
     }
     .logo {
         height: 36px;
     }
-    .features-section {
-        flex-direction: column;
-        align-items: center;
+    .feature {
+        min-width: 180px;
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem;
     }
-    .main-content {
-        padding: 0.5rem;
-    }
-    .auth-section {
-        padding: 1rem 0.5rem;
+    .prototype-img {
+        max-width: 98vw;
     }
 }
